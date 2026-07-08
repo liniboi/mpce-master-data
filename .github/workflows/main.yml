@@ -1,0 +1,33 @@
+name: Auto Update Addons Index
+
+on:
+  push:
+    paths:
+      - 'links.txt'
+      - '*.mcpack'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-python-version: '3.10'
+
+    - name: Install Dependencies
+      run: pip install beautifulsoup4 requests
+
+    - name: Run Processing Script
+      run: python update_library.py
+
+    - name: Save Changes Back to Repo
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "Automated library sync [skip ci]"
