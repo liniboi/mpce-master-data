@@ -1,8 +1,8 @@
 [
-  {
-    "title": "Crop indicator",
-    "description": "Adds an indicator for when your crops are fully grown. Useful if youre a farmer, just looking to get some livestock or getting some food",
-    "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
-    "downloadUrl": "https://github.com/liniboi/mpce-master-data/raw/main/Quick%20loot%20and%20Crafting%201.1.5.mcpack"
-  }
+    {
+        "title": "Bedrock UI+",
+        "description": "Select version for changelog:  \n        1.0.0",
+        "imageUrl": "https://media.forgecdn.net/attachments/1428/550/1000920372-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Bedrock_UI%2B.mcpack"
+    }
 ]
