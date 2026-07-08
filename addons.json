@@ -28,5 +28,23 @@
         "description": "Select version for changelog:  \n        1.0.0",
         "imageUrl": "https://media.forgecdn.net/attachments/1427/235/mcpedl-jpg.jpg",
         "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Newb_Complemetary_Shader_%7C_Compatible_With_Minecraft_v26.20%2B.mcpack"
+    },
+    {
+        "title": "Bare Bones & Stuff [1.11 Drop 1!]",
+        "description": "Select version for changelog:  \n        1.0.0",
+        "imageUrl": "https://media.forgecdn.net/attachments/1260/293/newbbnslogo-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Bare_Bones_%26_Stuff_%5B1.11_Drop_1%21%5D.mcpack"
+    },
+    {
+        "title": "La Nature by Carrot",
+        "description": "Select version for changelog:  \n        1.0.0",
+        "imageUrl": "https://media.forgecdn.net/attachments/1444/52/1000008413-gif.gif",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/La_Nature_by_Carrot.mcpack"
+    },
+    {
+        "title": "Ultimate Survival Texture Pack | USTP",
+        "description": "Select version for changelog:  \n        1.0.0",
+        "imageUrl": "https://media.forgecdn.net/attachments/1672/430/showcase-thumbnail-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Ultimate_Survival_Texture_Pack_%7C_USTP.mcpack"
     }
 ]
