@@ -1,62 +1,116 @@
 [
     {
         "title": "Bedrock UI+",
-        "description": "Select version for changelog:  \n        1.0.0",
-        "imageUrl": "https://media.forgecdn.net/attachments/1428/550/1000920372-png.png",
+        "description": "Addon: Bedrock UI+.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
         "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Bedrock%20UI%2B.mcpack"
     },
     {
-        "title": "X RAY + Night Vision",
-        "description": "© 2014-2026 MCPEDL.com. Powered by\n          Overwolf.\n          All rights reserved.",
-        "imageUrl": "https://media.forgecdn.net/attachments/1649/878/x-ray-night-vision-gif.gif",
+        "title": "X RAY + Night Vision v1.7",
+        "description": "Addon: X RAY + Night Vision v1.7.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
         "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/X%20RAY%20%2B%20Night%20Vision%20v1.7.mcpack"
     },
     {
+        "title": "Ty-el Settings Overlay v1.1.2",
+        "description": "Addon: Ty-el Settings Overlay v1.1.2.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Ty-el%20Settings%20Overlay%20v1.1.2.mcpack"
+    },
+    {
+        "title": "Newb Complementary Shaders",
+        "description": "Addon: Newb Complementary Shaders.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Newb%20Complementary%20Shaders.mcpack"
+    },
+    {
+        "title": "FPS Optimizer Boost Official",
+        "description": "Addon: FPS Optimizer Boost Official.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/FPS%20Optimizer%20Boost%20Official.mcpack"
+    },
+    {
         "title": "Better Days Played",
-        "description": "Select version for changelog:  \n        1.0.0",
-        "imageUrl": "https://media.forgecdn.net/attachments/1613/330/bdp-jpg.jpg",
+        "description": "Addon: Better Days Played.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
         "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Better%20Days%20Played.mcpack"
     },
     {
         "title": "Star's FPS Counter",
-        "description": "Select version for changelog:  \n        1.0.0",
-        "imageUrl": "https://media.forgecdn.net/attachments/901/883/mcpedl.png",
+        "description": "Addon: Star's FPS Counter.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
         "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Star%27s%20FPS%20Counter.mcpack"
     },
     {
+        "title": "Azify Glow Em All",
+        "description": "Addon: Azify Glow Em All.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Azify%20Glow%20Em%20All.mcpack"
+    },
+    {
         "title": "Durability Viewer",
-        "description": "Select version for changelog:  \n        1.0.2\n      \n        1.0.1\n      \n        1.0.0",
-        "imageUrl": "https://media.forgecdn.net/attachments/1662/987/mcpedl-png.png",
+        "description": "Addon: Durability Viewer.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
         "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Durability%20Viewer.mcpack"
     },
     {
         "title": "Hotbar Slot Button",
-        "description": "Select version for changelog:  \n        1.0.1\n      \n        1.0.0",
-        "imageUrl": "https://media.forgecdn.net/attachments/1393/577/1000278739-jpg.jpg",
+        "description": "Addon: Hotbar Slot Button.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
         "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Hotbar%20Slot%20Button.mcpack"
     },
     {
         "title": "Glowing Ores",
-        "description": "Select version for changelog:  \n        1.0.0",
-        "imageUrl": "https://media.forgecdn.net/attachments/1391/46/1000424075-png-png.png",
+        "description": "Addon: Glowing Ores.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
         "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Glowing%20Ores.mcpack"
     },
     {
-        "title": "Item Info+",
-        "description": "Select version for changelog:  \n        1.0.0",
-        "imageUrl": "https://media.forgecdn.net/attachments/912/763/pack-banner-1.png",
-        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Item%20Info%2B.mcpack"
-    },
-    {
-        "title": "Low fire",
-        "description": "Select version for changelog:  \n        1.0.1\n      \n        1.0.0",
-        "imageUrl": "https://media.forgecdn.net/attachments/1121/41/orange_background_fire_mcpedl-gif.gif",
+        "title": "Low Fire V1.0.8",
+        "description": "Addon: Low Fire V1.0.8.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
         "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Low%20Fire%20V1.0.8.mcpack"
     },
     {
-        "title": "RGB XP Bar",
-        "description": "© 2014-2026 MCPEDL.com. Powered by\n          Overwolf.\n          All rights reserved.",
-        "imageUrl": "https://media.forgecdn.net/attachments/1222/959/1000677742-gif.gif",
+        "title": "X RAY + Night Vision v1.7",
+        "description": "Addon: X RAY + Night Vision v1.7.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/X%20RAY%20%2B%20Night%20Vision%20v1.7.mcpack"
+    },
+    {
+        "title": "RGB XP bar",
+        "description": "Addon: RGB XP bar.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
         "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/RGB%20XP%20bar.mcpack"
+    },
+    {
+        "title": "Nebux UI",
+        "description": "Addon: Nebux UI.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Nebux%20UI.mcpack"
+    },
+    {
+        "title": "Realistic Rain",
+        "description": "Addon: Realistic Rain.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Realistic%20Rain.mcpack"
+    },
+    {
+        "title": "3D Vanilla Blocks TP 1.1",
+        "description": "Addon: 3D Vanilla Blocks TP 1.1.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/3D%20Vanilla%20Blocks%20TP%201.1.mcpack"
+    },
+    {
+        "title": "Villager Trade Unlocker",
+        "description": "Addon: Villager Trade Unlocker.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Villager%20Trade%20Unlocker.mcpack"
+    },
+    {
+        "title": "Fast Craft and Loot",
+        "description": "Addon: Fast Craft and Loot.mcpack",
+        "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Fast%20Craft%20and%20Loot.mcpack"
     }
 ]
