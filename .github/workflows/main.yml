@@ -5,6 +5,8 @@ on:
     paths:
       - 'links.txt'
       - '*.mcpack'
+      - 'update_library.py'
+  workflow_dispatch:  # This enables the "Run workflow" button
 
 permissions:
   contents: write
@@ -16,15 +18,22 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
+    - name: Debug File List
+      run: |
+        echo "Listing all files in the current directory:"
+        ls -R
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-python-version: '3.10'
+        python-version: '3.10'
 
     - name: Install Dependencies
       run: pip install beautifulsoup4 requests
 
     - name: Run Processing Script
+      env:
+        PYTHONUNBUFFERED: 1
       run: python update_library.py
 
     - name: Save Changes Back to Repo
