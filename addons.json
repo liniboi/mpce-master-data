@@ -9,13 +9,7 @@
         "title": "X RAY + Night Vision",
         "description": "© 2014-2026 MCPEDL.com. Powered by\n          Overwolf.\n          All rights reserved.",
         "imageUrl": "https://media.forgecdn.net/attachments/1649/878/x-ray-night-vision-gif.gif",
-        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/X_RAY_%2B_Night_Vision.mcpack"
-    },
-    {
-        "title": "La Nature by Carrot",
-        "description": "Select version for changelog:  \n        1.0.0",
-        "imageUrl": "https://media.forgecdn.net/attachments/1444/52/1000008413-gif.gif",
-        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/La_Nature_by_Carrot.mcpack"
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/X%20RAY%20%2B%20Night%20Vision%20v1.7.mcpack"
     },
     {
         "title": "Better Days Played",
@@ -52,5 +46,17 @@
         "description": "Select version for changelog:  \n        1.0.0",
         "imageUrl": "https://media.forgecdn.net/attachments/912/763/pack-banner-1.png",
         "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Item%20Info%2B.mcpack"
+    },
+    {
+        "title": "Low fire",
+        "description": "Select version for changelog:  \n        1.0.1\n      \n        1.0.0",
+        "imageUrl": "https://media.forgecdn.net/attachments/1121/41/orange_background_fire_mcpedl-gif.gif",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Low%20Fire%20V1.0.8.mcpack"
+    },
+    {
+        "title": "RGB XP Bar",
+        "description": "© 2014-2026 MCPEDL.com. Powered by\n          Overwolf.\n          All rights reserved.",
+        "imageUrl": "https://media.forgecdn.net/attachments/1222/959/1000677742-gif.gif",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/RGB%20XP%20bar.mcpack"
     }
 ]
