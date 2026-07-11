@@ -35,7 +35,7 @@ def scrape_mcpedl_metadata(url):
 
         return {"title": title, "description": description, "imageUrl": image_url}
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Error scraping {url}: {e}")
         return None
 
 def run_cloud_automation():
@@ -47,32 +47,47 @@ def run_cloud_automation():
         target_pages = [line.strip() for line in f if line.strip() and not line.startswith("#")]
 
     addons_list = []
+    local_files = [f for f in os.listdir(".") if f.endswith('.mcpack')]
     
+    print(f"DEBUG: Found {len(local_files)} .mcpack files in directory.")
+
     for page_url in target_pages:
         data = scrape_mcpedl_metadata(page_url)
         if not data:
             continue
             
-        expected_name = data["title"].replace(" ", "_") + ".mcpack"
+        title = data["title"]
+        # Generate both possible filenames
+        name_with_spaces = f"{title}.mcpack"
+        name_with_underscores = f"{title.replace(' ', '_')}.mcpack"
         
-        # Now only checks if the exact file exists; no renaming happens
-        if os.path.exists(expected_name):
-            encoded_filename = urllib.parse.quote(expected_name)
+        actual_name = None
+        
+        # Check which version exists in the folder
+        if os.path.exists(name_with_spaces):
+            actual_name = name_with_spaces
+        elif os.path.exists(name_with_underscores):
+            actual_name = name_with_underscores
+            
+        if actual_name:
+            encoded_filename = urllib.parse.quote(actual_name)
             addon_entry = {
-                "title": data["title"],
+                "title": title,
                 "description": data["description"],
                 "imageUrl": data["imageUrl"],
                 "downloadUrl": f"{BASE_RAW_URL}{encoded_filename}"
             }
             addons_list.append(addon_entry)
-            print(f"Verified: {data['title']}")
+            print(f"Verified: {title} (Matched: {actual_name})")
         else:
-            print(f"[-] Missing file for: {data['title']} (Expected: {expected_name})")
+            print(f"[-] Missing: '{title}' | Checked for: '{name_with_spaces}' and '{name_with_underscores}'")
 
     if addons_list:
         with open("addons.json", "w", encoding="utf-8") as json_file:
             json.dump(addons_list, json_file, indent=4, ensure_ascii=False)
         print("addons.json updated.")
+    else:
+        print("No addons were verified. addons.json not updated.")
 
 if __name__ == "__main__":
     run_cloud_automation()
