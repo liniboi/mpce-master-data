@@ -9,79 +9,54 @@ REPO_NAME = "mpce-master-data"
 BRANCH = "main"
 BASE_RAW_URL = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/{BRANCH}/"
 
-def scrape_mcpedl_metadata(url):
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-    try:
-        response = requests.get(url, headers=headers, timeout=10)
-        if response.status_code != 200:
-            return None
-        soup = BeautifulSoup(response.text, 'html.parser')
-        title = soup.find('h1').text.strip() if soup.find('h1') else None
-        if not title:
-            return None
-        
-        paragraphs = soup.find_all('p')
-        description = ""
-        for p in paragraphs[:3]:
-            text = p.text.strip()
-            if len(text) > 30:
-                description = text
-                break
-        if not description:
-            description = f"Custom package for {title}."
-
-        img_tag = soup.find('meta', property='og:image')
-        image_url = img_tag['content'] if img_tag else "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png"
-
-        return {"title": title, "description": description, "imageUrl": image_url}
-    except Exception as e:
-        print(f"Error scraping {url}: {e}")
-        return None
+def get_keywords(text):
+    # Extracts meaningful words (removes special chars, lowercases)
+    import re
+    return set(re.findall(r'\w+', text.lower()))
 
 def run_cloud_automation():
-    if not os.path.exists("links.txt"):
-        print("links.txt missing.")
-        return
-
+    if not os.path.exists("links.txt"): return
+    
     with open("links.txt", "r") as f:
         target_pages = [line.strip() for line in f if line.strip() and not line.startswith("#")]
 
-    addons_list = []
-    # Get all .mcpack and .mcaddon files
     local_files = [f for f in os.listdir(".") if f.endswith(('.mcpack', '.mcaddon'))]
-    
+    addons_list = []
+
     for page_url in target_pages:
-        data = scrape_mcpedl_metadata(page_url)
-        if not data:
-            continue
-            
-        title = data["title"].lower()
-        found_file = None
+        slug = page_url.strip("/").split("/")[-1] # Gets "bedrock-ui-plus-b69-2" from URL
+        slug_keywords = get_keywords(slug)
         
-        # LOOSE MATCHING: 
-        # Check if the title is inside the filename (ignoring case)
+        best_match = None
+        highest_score = 0
+        
+        # Scoring system: find the file that shares the most keywords with the URL
         for filename in local_files:
-            if title in filename.lower():
-                found_file = filename
-                break
+            file_keywords = get_keywords(filename)
+            score = len(slug_keywords.intersection(file_keywords))
             
-        if found_file:
-            encoded_filename = urllib.parse.quote(found_file)
+            if score > highest_score:
+                highest_score = score
+                best_match = filename
+        
+        if best_match and highest_score > 1: # Require at least 2 matching words
+            data = {"title": best_match.replace(".mcpack", "").replace(".mcaddon", ""), 
+                    "description": f"Addon: {best_match}", 
+                    "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png"}
+            
             addon_entry = {
                 "title": data["title"],
                 "description": data["description"],
                 "imageUrl": data["imageUrl"],
-                "downloadUrl": f"{BASE_RAW_URL}{encoded_filename}"
+                "downloadUrl": f"{BASE_RAW_URL}{urllib.parse.quote(best_match)}"
             }
             addons_list.append(addon_entry)
-            print(f"Verified: '{data['title']}' matched with '{found_file}'")
+            print(f"Verified: '{best_match}' matched with '{slug}'")
         else:
-            print(f"[-] No file found containing title: '{data['title']}'")
+            print(f"[-] No match found for: '{slug}'")
 
-    if addons_list:
-        with open("addons.json", "w", encoding="utf-8") as json_file:
-            json.dump(addons_list, json_file, indent=4, ensure_ascii=False)
-        print(f"Success: {len(addons_list)} addons added to addons.json.")
+    with open("addons.json", "w", encoding="utf-8") as f:
+        json.dump(addons_list, f, indent=4, ensure_ascii=False)
 
 if __name__ == "__main__":
     run_cloud_automation()
