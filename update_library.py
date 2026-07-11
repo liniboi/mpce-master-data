@@ -2,6 +2,7 @@ import os
 import json
 import urllib.parse
 import requests
+import re
 from bs4 import BeautifulSoup
 
 GITHUB_USERNAME = "liniboi"
@@ -10,9 +11,26 @@ BRANCH = "main"
 BASE_RAW_URL = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/{BRANCH}/"
 
 def get_keywords(text):
-    # Extracts meaningful words (removes special chars, lowercases)
-    import re
     return set(re.findall(r'\w+', text.lower()))
+
+def get_metadata(url):
+    headers = {"User-Agent": "Mozilla/5.0"}
+    try:
+        response = requests.get(url, headers=headers, timeout=10)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # Get actual title and image
+        title = soup.find('h1').text.strip()
+        img_tag = soup.find('meta', property='og:image')
+        image_url = img_tag['content'] if img_tag else ""
+        
+        # Get description
+        paragraphs = soup.find_all('p')
+        desc = next((p.text.strip() for p in paragraphs if len(p.text.strip()) > 30), f"Addon: {title}")
+        
+        return {"title": title, "description": desc, "imageUrl": image_url}
+    except:
+        return None
 
 def run_cloud_automation():
     if not os.path.exists("links.txt"): return
@@ -24,36 +42,30 @@ def run_cloud_automation():
     addons_list = []
 
     for page_url in target_pages:
-        slug = page_url.strip("/").split("/")[-1] # Gets "bedrock-ui-plus-b69-2" from URL
+        slug = page_url.strip("/").split("/")[-1]
         slug_keywords = get_keywords(slug)
         
         best_match = None
         highest_score = 0
         
-        # Scoring system: find the file that shares the most keywords with the URL
         for filename in local_files:
             file_keywords = get_keywords(filename)
             score = len(slug_keywords.intersection(file_keywords))
-            
             if score > highest_score:
                 highest_score = score
                 best_match = filename
         
-        if best_match and highest_score > 1: # Require at least 2 matching words
-            data = {"title": best_match.replace(".mcpack", "").replace(".mcaddon", ""), 
-                    "description": f"Addon: {best_match}", 
-                    "imageUrl": "https://media.forgecdn.net/attachments/1610/159/1775109525257-png.png"}
-            
-            addon_entry = {
-                "title": data["title"],
-                "description": data["description"],
-                "imageUrl": data["imageUrl"],
-                "downloadUrl": f"{BASE_RAW_URL}{urllib.parse.quote(best_match)}"
-            }
-            addons_list.append(addon_entry)
-            print(f"Verified: '{best_match}' matched with '{slug}'")
-        else:
-            print(f"[-] No match found for: '{slug}'")
+        if best_match and highest_score > 0:
+            data = get_metadata(page_url)
+            if data:
+                addon_entry = {
+                    "title": data["title"],
+                    "description": data["description"],
+                    "imageUrl": data["imageUrl"],
+                    "downloadUrl": f"{BASE_RAW_URL}{urllib.parse.quote(best_match)}"
+                }
+                addons_list.append(addon_entry)
+                print(f"Verified: '{best_match}' with image '{data['imageUrl']}'")
 
     with open("addons.json", "w", encoding="utf-8") as f:
         json.dump(addons_list, f, indent=4, ensure_ascii=False)
