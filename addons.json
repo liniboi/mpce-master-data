@@ -3,7 +3,7 @@
         "title": "Bedrock UI+",
         "description": "Select version for changelog:  \n        1.0.0",
         "imageUrl": "https://media.forgecdn.net/attachments/1428/550/1000920372-png.png",
-        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Bedrock%20UI%2B.mcpack"
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Bedrock%20Redstone%2B_v1.2.2.mcpack"
     },
     {
         "title": "X RAY + Night Vision",
@@ -33,7 +33,7 @@
         "title": "La Nature by Carrot",
         "description": "Select version for changelog:  \n        1.0.0",
         "imageUrl": "https://media.forgecdn.net/attachments/1444/52/1000008413-gif.gif",
-        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/La_Nature_by_Carrot.mcpack"
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/SmokeSprint%20By%20JustPals%201.11.mcpack"
     },
     {
         "title": "FPS Optimizer  | FPS Boost Official",
@@ -87,7 +87,7 @@
         "title": "PandaMine's Fullbright (Night Vision)",
         "description": "Select version for changelog:  \n        1.0.1\n      \n        1.0.0",
         "imageUrl": "https://media.forgecdn.net/attachments/1251/497/thumbnail-png.png",
-        "downloadUrl": "https://rawgithubusercontent.com/liniboi/mpce-master-data/main/PandaMine's%20FullBright%20.mcpack"
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Real%20Xray%20%2B%20Night%20Vision.mcpack"
     },
     {
         "title": "RGB XP Bar",
@@ -124,5 +124,59 @@
         "description": "Select version for changelog:  \n        1.0.0",
         "imageUrl": "https://media.forgecdn.net/attachments/1356/477/fast-craft-3-0-thumbnail-mcpedl-jpg.jpg",
         "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Fast%20Craft%20and%20Loot.mcpack"
+    },
+    {
+        "title": "†VENOM† Client PvP",
+        "description": "Select version for changelog:  \n        1.0.2\n      \n        1.0.1\n      \n        1.0.0",
+        "imageUrl": "https://media.forgecdn.net/attachments/1543/527/1000161491-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/VENOM%20V5.6.mcpack"
+    },
+    {
+        "title": "Slowness16x",
+        "description": "Select version for changelog:  \n        1.0.0",
+        "imageUrl": "https://media.forgecdn.net/attachments/1787/577/d5d6e673-1384-4145-bb2f-41664376062c-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Slowness16x.mcpack"
+    },
+    {
+        "title": "VulkanCore",
+        "description": "Select version for changelog:  \n        1.0.1\n      \n        1.0.0",
+        "imageUrl": "https://media.forgecdn.net/attachments/1748/273/1000086927-jpg.jpg",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/VulkanCore%28Performance%20Booster%29V6.5.0.mcpack"
+    },
+    {
+        "title": "Spectral A&S By JustPals",
+        "description": "Select version for changelog:  \n        1.0.0",
+        "imageUrl": "https://media.forgecdn.net/attachments/1730/34/ezgif-63904513d940ac35-gif.gif",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/SmokeSprint%20By%20JustPals%201.11.mcpack"
+    },
+    {
+        "title": "Smoke Sprint A&S By JustPals",
+        "description": "Select version for changelog:  \n        1.0.0",
+        "imageUrl": "https://media.forgecdn.net/attachments/1760/692/ezgif-53545f3251a98467-gif.gif",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/SmokeSprint%20By%20JustPals%201.11.mcpack"
+    },
+    {
+        "title": "Fast Better Grass - Full Grass",
+        "description": "© 2014-2026 MCPEDL.com. Powered by\n          Overwolf.\n          All rights reserved.",
+        "imageUrl": "https://media.forgecdn.net/attachments/1388/789/picsart_25-11-11_16-52-16-294-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Fast%20Better%20Grass%20v1.9.0.mcpack"
+    },
+    {
+        "title": "Player Health Indicator",
+        "description": "Select version for changelog:  \n        1.0.0",
+        "imageUrl": "https://media.forgecdn.net/attachments/1292/151/20250818_125216-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Bedrock%20Redstone%2B_v1.2.2.mcpack"
+    },
+    {
+        "title": "Small Items",
+        "description": "Select version for changelog:  \n        1.0.0",
+        "imageUrl": "https://media.forgecdn.net/attachments/1391/649/1000106055-png-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Bedrock%20Redstone%2B_v1.2.2.mcpack"
+    },
+    {
+        "title": "Bedrock Redstone+ [Vibrant Visuals Supported!]",
+        "description": "Select version for changelog:  \n        1.0.0",
+        "imageUrl": "https://media.forgecdn.net/attachments/1560/928/picsart_26-03-02_15-29-34-212-png.png",
+        "downloadUrl": "https://raw.githubusercontent.com/liniboi/mpce-master-data/main/Bedrock%20Redstone%2B_v1.2.2.mcpack"
     }
 ]
