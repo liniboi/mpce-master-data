@@ -42,15 +42,21 @@ def run_cloud_automation():
     addons_list = []
 
     for page_url in target_pages:
-        slug = page_url.strip("/").split("/")[-1]
-        slug_keywords = get_keywords(slug)
+        slug = page_url.strip("/").split("/")[-1].lower()
         
         best_match = None
         highest_score = 0
         
         for filename in local_files:
+            # Check if the first 5 letters match (case-insensitive)
+            if filename.lower()[:5] != slug[:5]:
+                continue
+            
+            # Existing keyword matching logic
             file_keywords = get_keywords(filename)
+            slug_keywords = get_keywords(slug)
             score = len(slug_keywords.intersection(file_keywords))
+            
             if score > highest_score:
                 highest_score = score
                 best_match = filename
