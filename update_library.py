@@ -3,6 +3,7 @@ import json
 import urllib.parse
 import requests
 import re
+import difflib
 from bs4 import BeautifulSoup
 
 GITHUB_USERNAME = "liniboi"
@@ -18,16 +19,11 @@ def get_metadata(url):
     try:
         response = requests.get(url, headers=headers, timeout=10)
         soup = BeautifulSoup(response.text, 'html.parser')
-        
-        # Get actual title and image
         title = soup.find('h1').text.strip()
         img_tag = soup.find('meta', property='og:image')
         image_url = img_tag['content'] if img_tag else ""
-        
-        # Get description
         paragraphs = soup.find_all('p')
         desc = next((p.text.strip() for p in paragraphs if len(p.text.strip()) > 30), f"Addon: {title}")
-        
         return {"title": title, "description": desc, "imageUrl": image_url}
     except:
         return None
@@ -48,20 +44,34 @@ def run_cloud_automation():
         highest_score = 0
         
         for filename in local_files:
-            # Check if the first 5 letters match (case-insensitive)
-            if filename.lower()[:5] != slug[:5]:
-                continue
+            fn_low = filename.lower()
             
-            # Existing keyword matching logic
-            file_keywords = get_keywords(filename)
+            # 1. Prefix and Suffix match (5 chars)
+            prefix_match = fn_low[:5] == slug[:5]
+            suffix_match = fn_low[-5:] == slug[-5:]
+            
+            # 2. Substring match (is slug inside filename?)
+            substring_match = slug in fn_low
+            
+            # 3. Fuzzy match (Levenshtein distance <= 3)
+            fuzzy_score = difflib.SequenceMatcher(None, fn_low, slug).ratio()
+            fuzzy_match = fuzzy_score > 0.7 
+            
+            # Keyword matching
+            file_keywords = get_keywords(fn_low)
             slug_keywords = get_keywords(slug)
-            score = len(slug_keywords.intersection(file_keywords))
+            keyword_score = len(slug_keywords.intersection(file_keywords))
             
-            if score > highest_score:
-                highest_score = score
-                best_match = filename
+            # Aggregate conditions: If any trigger, consider it a match
+            if prefix_match or suffix_match or substring_match or fuzzy_match or keyword_score > 0:
+                # Use current score or a weight based on matching logic
+                current_total_score = keyword_score + (1 if prefix_match else 0) + (1 if suffix_match else 0)
+                
+                if current_total_score >= highest_score:
+                    highest_score = current_total_score
+                    best_match = filename
         
-        if best_match and highest_score > 0:
+        if best_match:
             data = get_metadata(page_url)
             if data:
                 addon_entry = {
@@ -71,7 +81,7 @@ def run_cloud_automation():
                     "downloadUrl": f"{BASE_RAW_URL}{urllib.parse.quote(best_match)}"
                 }
                 addons_list.append(addon_entry)
-                print(f"Verified: '{best_match}' with image '{data['imageUrl']}'")
+                print(f"Verified: '{best_match}' for URL '{slug}'")
 
     with open("addons.json", "w", encoding="utf-8") as f:
         json.dump(addons_list, f, indent=4, ensure_ascii=False)
